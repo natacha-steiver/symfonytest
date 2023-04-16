@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}All trainings{% endblock %}
+ {% block body %}
+ <section id="training">
+ <!--liste-->
+
+
+{% for training in trainings %}
+<a href={{ "/training/#{training.id}" }} <h4 class="card-title ">{{ training.title }}</h4></a>
+{% endfor %}
+
+</section>
+
+ {% endblock %}
+ 

@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Update training{% endblock %}
+ {% block body %}
+ <section id="training">
+ <!--liste-->
+
+<h2>Update a training</h2>
+
+{{ form_start(form, {'action': path('training-delete'), 'method': 'DELETE'}) }}
+{{ form_end(form) }}
+</section>
+
+ {% endblock %}
+ 
