@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training - crud dashboard
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success mt-4">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+		{% if not trainings is same as([]) %}
+			<h1>Trainings</h1>
+
+			<a href="{{ path('training.new') }}" class="btn btn-primary">
+				Add a training
+			</a>
+
+			
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Nom</th>
+						<th scope="col">description</th>
+						<th scope="col">Edition</th>
+						<th scope="col">Suppresion</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for training in trainings %}
+						<tr class="table-primary">
+							<th scope="row">{{ training.id }}</th>
+							<td>{{ training.title }}</td>
+							
+							<td>{{ training.description }}</td>
+							<td>
+								<a href="{{ path('training-update', { id: training.id }) }}" class="btn btn-info">Modifier</a>
+							</td>
+							<td>
+								<a href="{{ path('training-delete', { id: training.id }) }}" class="btn btn-warning">Supprimer</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<div class="navigation d-flex justify-content-center mt-4">
+				{{ knp_pagination_render(trainings) }}
+			</div>
+		{% else %}
+			<h4>Il n'y a pas d'ingrédients</h4>
+
+			<a href="{{ path('training.new') }}" class="btn btn-primary">
+				Créer un ingrédient
+			</a>
+		{% endif %}
+	</div>
+{% endblock %}

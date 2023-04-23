@@ -17,24 +17,32 @@
         <li class="nav-item">
           <a class="nav-link" href="/price">Pricing</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
+    
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User access</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Account</a>
-            <a class="dropdown-item" href="#">Forum</a>
-         
+           <!-- <a class="dropdown-item" href="#">Account</a>
+            <a class="dropdown-item" href="#">Forum</a>-->
+          <a class="dropdown-item" href="#">FAQ</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Login/Logout</a>
+       
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+       	   
+            <a href="{{ path('app_logout') }}" >Logout</a>
+{% else %}
+    <a href="{{ path('app_register') }}" >Register</a></br>
+    <a href="{{ path('app_login') }}" >Login</a>
+    
+{% endif %}
           </div>
         </li>
       </ul>
-      <form class="d-flex">
+     <!--
+    <form class="d-flex">
         <input class="form-control me-sm-2" type="search" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>
+    --> 
     </div>
   </div>
 </nav>

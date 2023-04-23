@@ -68,31 +68,36 @@ class TrainingController extends AbstractController
 
     }
 
-    #[Route('/admin/training/{id}', name: 'training-update',methods:["PUT", "PATCH"])]
-    public function update(ManagerRegistry $doctrine,Request $request): Response
+    #[Route('/admin/training/{id}', name: 'training-update',methods:["GET","PUT", "PATCH"])]
+    public function update(Training $training,ManagerRegistry $doctrine,Request $request,$id): Response
     {
   
         $id = (int) ($request->get('id'));
         $repository= $doctrine->getRepository(Training::class);
         $training= $repository->find($id);
 
-        $form= $this->createForm(TrainingType::class,$training);
+        $form = $this->createForm(TrainingType::class, $training, [
+            'action' => $this->generateUrl('training-update',['id'=>$id]),
+            'method' => 'PUT',
+        ]);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $training= $form->getData();
             $entityManager = $doctrine->getManager();
             $entityManager->persist($training);
             $entityManager->flush();
+            return $this->redirectToRoute('app_dashboard');
         
         }
 
         return $this->render('Training/update.html.twig', [
             'form' => $form->createView(),
+            'id' =>$id
         ]);
 
     }
 
-    #[Route('/admin/training/{id}', name: 'training-delete',methods:["DELETE"])]
+    #[Route('/admin/training/delete/{id}', name: 'training-delete',methods:["GET","DELETE"])]
     public function delete(ManagerRegistry $doctrine,Request $request): Response
     {
         $id = (int) ($request->get('id'));
@@ -106,7 +111,7 @@ class TrainingController extends AbstractController
         
         
 
-        return $this->redirectToRoute('training');
+            return $this->redirectToRoute('app_dashboard');
     }
 
 

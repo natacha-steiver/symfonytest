@@ -6,9 +6,12 @@
  <!--liste-->
 
 <h2>Update a training</h2>
-
-{{ form_start(form, {'action': path('training-update'), 'method': 'PUT'}) }}
+ {% if app.request.attributes.get('_route') == 'training-update' %}
+{{ form_start(form,{'attr': {'id': 'id'}}, {'action': path('training-update'), 'method': 'PUT'}) }}
+{{ form_widget(form) }}
 {{ form_end(form) }}
+
+ {% endif %}
 </section>
 
  {% endblock %}
