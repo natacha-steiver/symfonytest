@@ -1,6 +1,11 @@
 /* by Jamal Hassouni*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
+h4{
+	margin: 2rem 0 !important;
+	}
+section{
+		padding: 1rem;
+	}
 body{
   margin: 0;
   padding: 0;

@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class TrainingType extends AbstractType
 {
@@ -15,6 +16,8 @@ class TrainingType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('description', TextType::class)
+            ->add('video', TextType::class)
+            ->add('imageFile', VichImageType::class)
             ->add('save', SubmitType::class)
         ;
     }

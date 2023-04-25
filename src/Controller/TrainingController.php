@@ -59,6 +59,7 @@ class TrainingController extends AbstractController
             $entityManager = $doctrine->getManager();
             $entityManager->persist($training);
             $entityManager->flush();
+            return $this->redirectToRoute('app_dashboard');
         
         }
 

@@ -1,13 +1,18 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Price{% endblock %}
+{% block title %}{{ training.title }}{% endblock %}
  {% block body %}
  <section id="training">
  <!--detail-->
 
 <!--{{dump(training)}}-->
-<h4 class="card-title ">{{ training.title }}</h4>
-<div>{{ training.description }}</div>
+<h4 class="">{{ training.title }}</h4>
+<div class="row">
+
+    <div class="col-lg-6">{{ training.description }}</div>
+    <div class="col-lg-6"> <img style="max-width:70%;" src={{asset('images/'~training.imageName) }} /></div>
+</div>
+
 </section>
 
  {% endblock %}
