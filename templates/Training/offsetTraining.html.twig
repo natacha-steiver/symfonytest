@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block title %}All trainings{% endblock %}
+ {% block body %}
+ <section id="training" class="container">
+ <!--liste-->
+<h2 style="margin: 2rem 0;">All trainings</h2>
+ <div class="row">
+{% for training in trainings %}
+<a  class="col-sm-auto col-md-12 col-lg-4 mb-4" href={{ "/training/#{training.id}" }} >
+
+    <div ><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+     
+        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+           <div class="card-img-overlay d-flex flex-column">
+           
+            <div class="card-body">
+               <small class="card-meta mb-2">Tutorial</small>
+               <h4 class="card-title mt-0 text-white">{{ training.title }}</h4>
+              <small><i class="far fa-clock"></i> {{ training.dateCreation.format('F d, Y') }}</small>
+             </div>
+            
+             <div class="card-footer">
+              <div class="media">
+     <img class="mr-3 rounded-circle" src="https://assets.codepen.io/460692/internal/avatars/users/default.png" alt="Generic placeholder image" style="max-width:50px">
+     <div class="media-body">
+       <h6 class="my-0 text-white d-block">S. Natacha </h6>
+        <small>Developer</small>
+     </div>
+   </div>
+             </div>
+           </div>
+         </div></div>
+
+</a>
+
+  
+
+{% endfor %}
+</div>
+<a href="" id="more" >
+  {{ buttonOffset}}
+</a>
+</section>
+
+ {% endblock %}
+ 
+ 

@@ -10,7 +10,7 @@
 				{{ message }}
 			</div>
 		{% endfor %}
-
+<p><b>Logged as </b>{{ app.user.name }} {{ app.user.firstname }}</p>  
 		{% if not trainings is same as([]) %}
 			<h1>Trainings</h1>
 

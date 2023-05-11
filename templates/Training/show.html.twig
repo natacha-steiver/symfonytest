@@ -2,7 +2,7 @@
 
 {% block title %}{{ training.title }}{% endblock %}
  {% block body %}
- <section id="training">
+ <section id="training" class="container">
  <!--detail-->
 
 <!--{{dump(training)}}-->
@@ -10,7 +10,7 @@
 <div class="row">
 
     <div class="col-lg-6">{{ training.description }}</div>
-    <div class="col-lg-6"> <img style="max-width:70%;" src={{asset('images/'~training.imageName) }} /></div>
+    <div class="col-lg-6 space-mobile" > <img style="max-width:100%;" src={{asset('images/'~training.imageName) }} /></div>
 </div>
 
 </section>

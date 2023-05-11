@@ -1,7 +1,25 @@
 
-
+#more:hover{
+  background: transparent;
+}
+#more{
+	text-align: center;
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 55px;
+    /* width: 100%; */
+    padding: 1rem;
+    border: 1px solid #8998a4;
+    /* justify-content: center; */
+    /* display: flex; */
+    background: #212529;
+    font-weight: bold;
+    color: #8998a4;
+}
 /*************form form*************/
 /* config.css */
+
 h4{
 margin: 2rem 0 !important;
 }
@@ -272,6 +290,7 @@ footer{
   overflow: hidden;
   border-radius: 20px;
   min-height: 450px;
+ 
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 768px) {

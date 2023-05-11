@@ -1,5 +1,11 @@
 /* by Jamal Hassouni*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@media screen and (max-width:992px){
+	.space-mobile{
+		margin: 2rem 0;
+	  }
+}
+
 h4{
 	margin: 2rem 0 !important;
 	}

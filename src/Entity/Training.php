@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\User;
 use App\Repository\TrainingRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
@@ -10,9 +11,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: TrainingRepository::class)]
 #[Vich\Uploadable]
+
+
+
 class Training
 {
     
+    
+    #[ORM\ManyToOne(targetEntity:User::class, inversedBy:"trainings")]
+    #[ORM\JoinColumn(nullable:true)]
+    private User $user;
     
     #[ORM\Column(type: 'datetime_immutable')]
     #[Assert\NotNull()]
@@ -90,6 +98,22 @@ class Training
         return $this;
     }
 
+    public function __toString():string {
+        return (string) $this->user;
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser( $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
 
     public function setImageFile(?File $imageFile = null): void
     {
@@ -142,6 +166,18 @@ class Training
     public function setDateCreation(\DateTimeImmutable $dateCreation): self
     {
         $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

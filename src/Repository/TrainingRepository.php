@@ -39,20 +39,32 @@ class TrainingRepository extends ServiceEntityRepository
         }
     }
 
+/*** 
+ * @return Training[] Returns an array of Training objects
+ */
+/*
+public function findLimit(int $limit=6): array
+{
+  
+    $entityManager = $this->getEntityManager();
+
+    $query = $entityManager->createQuery(
+        'SELECT t
+        FROM App\Entity\Training t
+        ORDER BY t.dateCreation ASC'
+    );
+
+    // returns an array of Product objects
+    return $query->getResult();
+    
+    
+}
+*/
+    
 //    /**
 //     * @return Training[] Returns an array of Training objects
 //     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('t.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+//   
 
 //    public function findOneBySomeField($value): ?Training
 //    {
