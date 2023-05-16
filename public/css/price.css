@@ -6,6 +6,11 @@
 	  }
 }
 
+.rounded-circle{
+	height: 50px;
+	width: 50px;
+  }
+  
 h4{
 	margin: 2rem 0 !important;
 	}
