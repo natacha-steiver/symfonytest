@@ -7,15 +7,15 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Home
+          <a class="nav-link active" href="{{ path('home') }}">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/feature">Features</a>
+          <a class="nav-link" href="{{ path('feature') }}">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/price">Pricing</a>
+          <a class="nav-link" href="{{ path('price') }}">Pricing</a>
         </li>
     
         <li class="nav-item dropdown">
@@ -26,7 +26,7 @@
 {% if is_granted('ROLE_ADMIN') %}
 <a class="dropdown-item"  href="{{ path('app_dashboard') }}" >Dashboard</a>
 {% endif %}
-          <a class="dropdown-item" href="/faq">FAQ</a>
+          <a class="dropdown-item" href="{{ path('faq') }}">FAQ</a>
             <div class="dropdown-divider"></div>
        
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}

@@ -39,6 +39,22 @@ class HomeController extends AbstractController
           
         ]);
     }
+    #[Route('/feature', name: 'feature',methods:['GET'])]
+    public function indexFaq(): Response
+    {
+        return $this->render('Feature/index.html.twig', [
+            'controller_name' => 'HomeController'
+          
+        ]);
+    }
+    #[Route('/price', name: 'price',methods:['GET'])]
+    public function indexFaq(): Response
+    {
+        return $this->render('Price/index.html.twig', [
+            'controller_name' => 'HomeController'
+          
+        ]);
+    }
 }
 
 
