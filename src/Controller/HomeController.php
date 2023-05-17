@@ -40,7 +40,7 @@ class HomeController extends AbstractController
         ]);
     }
     #[Route('/feature', name: 'feature',methods:['GET'])]
-    public function indexFaq(): Response
+    public function indexFeature(): Response
     {
         return $this->render('Feature/index.html.twig', [
             'controller_name' => 'HomeController'
@@ -48,7 +48,7 @@ class HomeController extends AbstractController
         ]);
     }
     #[Route('/price', name: 'price',methods:['GET'])]
-    public function indexFaq(): Response
+    public function indexPrice(): Response
     {
         return $this->render('Price/index.html.twig', [
             'controller_name' => 'HomeController'
