@@ -5,13 +5,15 @@
  <section id="training">
  <!--liste-->
 
-<h2>Update a training</h2>
+<div class="form">
+    <h2>Update a training</h2>
  {% if app.request.attributes.get('_route') == 'training-update' %}
 {{ form_start(form,{'attr': {'id': 'id'}}, {'action': path('training-update'), 'method': 'PUT'}) }}
 {{ form_widget(form) }}
 {{ form_end(form) }}
 
  {% endif %}
+</div>
 </section>
 
  {% endblock %}

@@ -24,6 +24,23 @@
 h4{
 margin: 2rem 0 !important;
 }
+td> .btn-info,td> .btn-warning{
+color: #fff !important;
+}
+.form{
+  border-radius: 20px;
+}
+.form button {
+  background: #6494c1;
+  border: none;
+  border-radius: 30px;
+  padding: .5rem;
+  margin: 1rem 0;
+  min-width: 5rem;
+}
+.form label,.form p,.form span,.form div{
+  color:#fff;
+}
 section{
   padding: 1rem;
 }
@@ -44,7 +61,7 @@ border-radius: 0;
 }
 .form label{
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   }
 
 .form{
@@ -375,9 +392,14 @@ a:hover {
   background: #fec503;
   text-shadow: none;
 }
-
+.pagination a,.pagination span{
+  font-weight: bold;
+  padding: .2rem;
+}
 footer {
   padding: 2rem 0;
+  
+  margin-top: 1rem;
   background-color: #212529;
 }
 

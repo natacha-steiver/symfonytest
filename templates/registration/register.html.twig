@@ -1,7 +1,7 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Register !{% endblock %}
 
 {% block body %}
 {% for flash_error in app.flashes('verify_email_error') %}
@@ -13,11 +13,11 @@
     {{ form_start(registrationForm) }}
     <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
 <div class="row">
-        <i class="fa-solid fa-at col-lg-1" style="color: #a3a3a3;"></i>
+        <i class="fa-solid fa-user col-lg-1" style="color: #a3a3a3;"></i>
         <div style="background: #383c41;" class="col-lg-11  hide-label">{{ form_row(registrationForm.name) }}</div>
 </div>
 <div class="row">
-    <i class="fa-solid fa-at col-lg-1" style="color: #a3a3a3;"></i>
+    <i class="fa-regular fa-user col-lg-1" style="color: #a3a3a3;"></i>
     <div style="background: #383c41;" class="col-lg-11  hide-label">{{ form_row(registrationForm.firstname) }}</div>
 </div>
 <div class="row">
